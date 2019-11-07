@@ -1,0 +1,86 @@
+{
+  "name": "@agte/node-ws-jsonrpc",
+  "version": "0.0.1",
+  "description": "Backend implementation of the JSON RPC protocol",
+  "type": "module",
+  "main": "./index.js",
+  "directories": {
+    "lib": "src",
+    "test": "test"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "format": "eslint --fix .",
+    "test": "ava --serial --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agte/node-ws-jsonrpc.git"
+  },
+  "keywords": [
+    "JSON-RPC",
+    "ws"
+  ],
+  "author": {
+    "name": "Anna Agte",
+    "email": "matiasrustagte@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/agte/node-ws-jsonrpc/issues"
+  },
+  "homepage": "https://github.com/agte/node-ws-jsonrpc#readme",
+  "dependencies": {
+    "@agte/type": "git+https://github.com/agte/type.git#1.0.0"
+  },
+  "devDependencies": {
+    "ava": "^2.4.0",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "esm": "^3.2.25"
+  },
+  "engines": {
+    "node": ">=12.4.0"
+  },
+  "eslintConfig": {
+    "env": {
+      "es6": true,
+      "node": true
+    },
+    "extends": "airbnb-base",
+    "globals": {
+      "Atomics": "readonly",
+      "SharedArrayBuffer": "readonly"
+    },
+    "parser": "babel-eslint",
+    "parserOptions": {
+      "ecmaVersion": 2019,
+      "sourceType": "module"
+    },
+    "rules": {
+      "import/extensions": [
+        "error",
+        "ignorePackages"
+      ]
+    }
+  },
+  "ava": {
+    "require": [
+      "esm"
+    ],
+    "testOptions": {
+      "presets": [
+        [
+          "module:ava/stage-4",
+          {
+            "modules": false
+          }
+        ]
+      ]
+    },
+    "babel": false,
+    "compileEnhancements": false
+  }
+}
